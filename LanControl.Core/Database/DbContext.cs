@@ -1,4 +1,5 @@
 using Config.Net;
+using LanControl.Core.Errors;
 using LanControl.Core.Models;
 using LanControl.Shared.ViewModels.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +13,7 @@ public class DatabaseContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         var config = new ConfigurationBuilder<IConfig>().UseEnvironmentVariables().UseDotEnvFile().Build();
+        if (config.DatabaseConnectionString is null) throw new DatabaseError("CONNECTION_STRING_NOT_PROVIDED");
         optionsBuilder.UseSqlite(config.DatabaseConnectionString);
         base.OnConfiguring(optionsBuilder);
     }
