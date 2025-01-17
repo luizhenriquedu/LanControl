@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="Config.Net" Version="5.2.1" />
+    <PackageReference Include="Isopoh.Cryptography.Argon2" Version="2.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.1">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
@@ -16,6 +17,6 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.1" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="../LanControl.Shared/LanControl.Shared.csproj"/>
+    <ProjectReference Include="../LanControl.Shared/LanControl.Shared.csproj" />
   </ItemGroup>
 </Project>
