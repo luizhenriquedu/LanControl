@@ -1,6 +1,7 @@
 namespace LanControl.Shared.ViewModels.Interfaces;
 
-public record IConfig
+public interface IConfig
 {
-    public required string DatabaseConnectionString { get; set; }
+    public string DatabaseConnectionString { get; set; }
+    public string DiscordWebhookLogUrl { get; set; }
 }

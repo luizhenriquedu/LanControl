@@ -20,6 +20,9 @@ public class DatabaseContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<User>().Property(x => x.Id).ValueGeneratedOnAdd();
+        modelBuilder.Entity<User>().Property(x => x.Email).HasMaxLength(150);
+        modelBuilder.Entity<User>().Property(x => x.Name).HasMaxLength(150);
+        modelBuilder.Entity<User>().Property(x => x.PasswordHash).HasMaxLength(150);
         base.OnModelCreating(modelBuilder);
     }
 }
