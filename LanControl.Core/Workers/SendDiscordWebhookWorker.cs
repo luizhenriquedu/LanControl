@@ -13,12 +13,12 @@ public class SendDiscordWebhookWorker(ISendDiscordWebhookAdapter adapter, IMessa
         while (!stoppingToken.IsCancellationRequested)
         {
             if (!_messageQueueService.HasPendingMessages()) return;
-                var message = await _messageQueueService.DequeueMessageAsync();
-                if (message is null) return;
-                var response = await _adapter.Send(message);
-                if (!response.IsRateLimited) return;
-                await Task.Delay(response.ResetAfter, stoppingToken);
-                await _adapter.Send(message);
+            var message = await _messageQueueService.DequeueMessageAsync();
+            if (message is null) return;
+            var response = await _adapter.Send(message);
+            if (!response.IsRateLimited) return;
+            await Task.Delay(response.ResetAfter, stoppingToken);
+            await _adapter.Send(message);
         }
         await Task.Delay(5000, stoppingToken);
     }

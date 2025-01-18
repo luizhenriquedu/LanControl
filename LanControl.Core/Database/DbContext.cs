@@ -1,4 +1,5 @@
 using Config.Net;
+using LanControl.Core.Database.Configuration;
 using LanControl.Core.Errors;
 using LanControl.Core.Models;
 using LanControl.Shared.ViewModels.Interfaces;
@@ -19,10 +20,7 @@ public class DatabaseContext : DbContext
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<User>().Property(x => x.Id).ValueGeneratedOnAdd();
-        modelBuilder.Entity<User>().Property(x => x.Email).HasMaxLength(150);
-        modelBuilder.Entity<User>().Property(x => x.Name).HasMaxLength(150);
-        modelBuilder.Entity<User>().Property(x => x.PasswordHash).HasMaxLength(150);
+        modelBuilder.ApplyConfiguration(new UserConfiguration());
         base.OnModelCreating(modelBuilder);
     }
 }
