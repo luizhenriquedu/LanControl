@@ -21,7 +21,6 @@ public static class CoreSetup
 
     private static void AddToAspNetDi(this IServiceCollection serviceCollection)
     {
-        
         serviceCollection.AddSingleton<IMessageQueueService, MessageQueueService>();
         serviceCollection.AddScoped<IDiscordWebhookLogService, DiscordWebhookLogService>();
         serviceCollection.AddScoped<ISendDiscordWebhookAdapter, SendDiscordWebhookAdapter>();
