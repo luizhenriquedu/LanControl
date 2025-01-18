@@ -8,6 +8,5 @@ public class DiscordWebhookLogService : IDiscordWebhookLogService
 {
     public async Task LogWebhook()
     {
-        var log = new Log()
     }
 }

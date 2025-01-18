@@ -1,2 +1,4 @@
 namespace LanControl.Shared.ViewModels;
-public record DiscordWebhookEmbedViewModel(int Color, IEnumerable<DiscordWebhookEmbedFieldViewModel> Fields);
+public record DiscordWebhookEmbedViewModel(string Title,
+    IEnumerable<DiscordWebhookEmbedFieldViewModel> Fields,
+    int Color = 65280);
