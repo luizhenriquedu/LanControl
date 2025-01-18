@@ -27,4 +27,14 @@ public class UserRepository : IUserRepository
     {
         return await _dbContext.Set<User>().ToListAsync();
     }
+
+    public void Update(User user)
+    {
+        _dbContext.Set<User>().Update(user);
+    }
+
+    public async ValueTask<int> Commit()
+    {
+        return await _dbContext.SaveChangesAsync();
+    }
 }
