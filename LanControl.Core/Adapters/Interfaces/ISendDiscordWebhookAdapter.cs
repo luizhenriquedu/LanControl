@@ -3,5 +3,5 @@ namespace LanControl.Core.Adapters.Interfaces;
 
 public interface ISendDiscordWebhookAdapter
 {
-    public Task Send(DiscordWebhookViewModel webhook);
+    public Task<SendDiscordWebhookAdapterResponseViewModel> Send(DiscordWebhookViewModel webhook);
 }

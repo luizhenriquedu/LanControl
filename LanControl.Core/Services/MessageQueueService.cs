@@ -18,4 +18,5 @@ public class MessageQueueService : IMessageQueueService
         return _queue.Count != 0 ? Task.FromResult<DiscordWebhookViewModel?>(_queue.Dequeue()) : 
             Task.FromResult<DiscordWebhookViewModel?>(null);
     }
+    public bool HasPendingMessages() => _queue.Count != 0;
 }

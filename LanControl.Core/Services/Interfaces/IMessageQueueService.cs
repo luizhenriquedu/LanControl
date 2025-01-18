@@ -6,4 +6,6 @@ public interface IMessageQueueService
 {
     public Task QueueMessageAsync(DiscordWebhookViewModel webhook);
     public Task<DiscordWebhookViewModel?> DequeueMessageAsync();
+
+    public bool HasPendingMessages();
 }
