@@ -3,4 +3,5 @@
 *obj
 .env
 .idea
-LanControl.sln.DotSettings.user
+LanControl.sln.DotSettings.user\
+*.db
