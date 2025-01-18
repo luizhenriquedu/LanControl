@@ -11,8 +11,8 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="../LanControl.Core/LanControl.Core.csproj"/>
-    <ProjectReference Include="../LanControl.Shared/LanControl.Shared.csproj"/>
+    <ProjectReference Include="../LanControl.Core/LanControl.Core.csproj" />
+    <ProjectReference Include="../LanControl.Shared/LanControl.Shared.csproj" />
   
   </ItemGroup>
 </Project>
