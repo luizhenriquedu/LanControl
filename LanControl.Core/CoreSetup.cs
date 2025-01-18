@@ -16,6 +16,12 @@ public static class CoreSetup
     {
         var config = new ConfigurationBuilder<IConfig>().UseEnvironmentVariables().UseDotEnvFile().Build();
         serviceCollection.AddSingleton(config);
+        serviceCollection.AddToAspNetDi();
+    }
+
+    private static void AddToAspNetDi(this IServiceCollection serviceCollection)
+    {
+        
         serviceCollection.AddSingleton<IMessageQueueService, MessageQueueService>();
         serviceCollection.AddScoped<IDiscordWebhookLogService, DiscordWebhookLogService>();
         serviceCollection.AddScoped<ISendDiscordWebhookAdapter, SendDiscordWebhookAdapter>();
