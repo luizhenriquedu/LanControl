@@ -4,5 +4,5 @@ namespace LanControl.Core.Services.Interfaces;
 
 public interface IAuthenticationService
 {
-    public Task Login(UserLoginViewModel loginInfo);
+    public Task<UserViewModel?> LoginAsync(UserLoginViewModel model);
 }

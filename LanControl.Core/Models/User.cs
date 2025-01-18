@@ -1,4 +1,5 @@
 using Isopoh.Cryptography.Argon2;
+using LanControl.Shared.ViewModels;
 
 namespace LanControl.Core.Models;
 
@@ -12,5 +13,11 @@ public class User
     public bool IsValidPassword(string password)
     {
         return Argon2.Verify(PasswordHash, password);
+    }
+
+    public UserViewModel ToViewModel()
+    {
+        return new UserViewModel(Name, Id);
+        
     }
 }

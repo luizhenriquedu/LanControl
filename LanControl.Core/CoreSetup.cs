@@ -26,6 +26,7 @@ public static class CoreSetup
         serviceCollection.AddScoped<IDiscordWebhookLogService, DiscordWebhookLogService>();
         serviceCollection.AddScoped<ISendDiscordWebhookAdapter, SendDiscordWebhookAdapter>();
         serviceCollection.AddScoped<IUserRepository, IUserRepository>();
+        serviceCollection.AddScoped<IAuthenticationService, AuthenticationService>();
         serviceCollection.AddDbContext<DatabaseContext>();
         serviceCollection.AddHostedService<SendDiscordWebhookWorker>();
     }
