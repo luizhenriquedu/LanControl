@@ -10,4 +10,8 @@ public interface IUserRepository
 
     public void Update(User user);
     public ValueTask<int> Commit();
+    public ValueTask Add(User user);
+    public ValueTask<bool> ExistsByEmail(string email);
+    public ValueTask<bool> ExistsById(int id);
+    
 }

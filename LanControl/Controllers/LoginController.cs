@@ -6,12 +6,12 @@ namespace LanControl.Controllers;
 
 [ApiController]
 [Route("/api/user")]
-public class UserController(IAuthenticationService authenticationService) : ControllerBase
+public class LoginController(IAuthenticationService authenticationService) : ControllerBase
 {
     [HttpPost]
     public async Task<IActionResult> Login([FromBody] UserLoginViewModel model)
     {
-        if (!ModelState.IsValid) return Unauthorized();
+        if (!ModelState.IsValid) return BadRequest();
         var user = await authenticationService.LoginAsync(model);
         if (user is null)
         {
@@ -19,4 +19,6 @@ public class UserController(IAuthenticationService authenticationService) : Cont
         }
         return Ok();
     }
+
+    
 }

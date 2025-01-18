@@ -2,11 +2,14 @@
 using LanControl.Core.Adapters;
 using LanControl.Core.Adapters.Interfaces;
 using LanControl.Core.Database;
+using LanControl.Core.Errors;
 using LanControl.Core.Repositories.Interfaces;
+using LanControl.Core.Repositories;
 using LanControl.Core.Services;
 using LanControl.Core.Services.Interfaces;
 using LanControl.Core.Workers;
 using LanControl.Shared.ViewModels.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace LanControl.Core;
@@ -17,17 +20,21 @@ public static class CoreSetup
     {
         var config = new ConfigurationBuilder<IConfig>().UseEnvironmentVariables().UseDotEnvFile().Build();
         serviceCollection.AddSingleton(config);
-        serviceCollection.AddToAspNetDi();
-    }
-
-    private static void AddToAspNetDi(this IServiceCollection serviceCollection)
-    {
         serviceCollection.AddSingleton<IMessageQueueService, MessageQueueService>();
+        
         serviceCollection.AddScoped<IDiscordWebhookLogService, DiscordWebhookLogService>();
         serviceCollection.AddScoped<ISendDiscordWebhookAdapter, SendDiscordWebhookAdapter>();
-        serviceCollection.AddScoped<IUserRepository, IUserRepository>();
+        serviceCollection.AddScoped<IUserRepository, UserRepository>();
         serviceCollection.AddScoped<IAuthenticationService, AuthenticationService>();
-        serviceCollection.AddDbContext<DatabaseContext>();
+        serviceCollection.AddScoped<IUserService, UserService>();
+        serviceCollection.AddDbContext<DatabaseContext>(options =>
+        {
+            if(config.DatabaseConnectionString is null) throw new DatabaseError("CONNECTION_STRING_NOT_PROVIDED");
+            options.UseSqlite($"Data Source={config.DatabaseConnectionString}");
+        });
+        
+        serviceCollection.AddHttpClient<ISendDiscordWebhookAdapter, SendDiscordWebhookAdapter>();
         serviceCollection.AddHostedService<SendDiscordWebhookWorker>();
     }
+
 }

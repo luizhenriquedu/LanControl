@@ -10,8 +10,8 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
     public void Configure(EntityTypeBuilder<User> entityBuilder)
     {
         entityBuilder.Property(x => x.Id).ValueGeneratedOnAdd();
-        entityBuilder.Property(x => x.Email).HasMaxLength(150);
-        entityBuilder.Property(x => x.Name).HasMaxLength(150);
-        entityBuilder.Property(x => x.PasswordHash).HasMaxLength(150);
+        entityBuilder.Property(x => x.Email).HasMaxLength(150).IsRequired();
+        entityBuilder.Property(x => x.Name).HasMaxLength(150).IsRequired();
+        entityBuilder.Property(x => x.PasswordHash).HasMaxLength(150).IsRequired();
     }
 }
