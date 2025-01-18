@@ -12,7 +12,6 @@ public class SendDiscordWebhookAdapter(HttpClient httpClient, IConfig config) : 
     private readonly HttpClient _httpClient = httpClient; 
     public async Task<SendDiscordWebhookAdapterResponseViewModel> Send(DiscordWebhookViewModel webhook)
     {
-        Console.WriteLine("teste`");
         if (config.DiscordWebhookLogUrl is null) 
             throw new SendDiscordWebhookError("DISCORD_WEBHOOK_URL_NOT_FOUND");
         var uri = new Uri(config.DiscordWebhookLogUrl);
