@@ -14,7 +14,6 @@ public class SendDiscordWebhookWorker(IMessageQueueService messageQueueService, 
         {
             if (_messageQueueService.HasPendingMessages())
             {
-                ;
                 var message = await _messageQueueService.DequeueMessageAsync();
                 if (message is null) return;
                 var response = await _adapter.Send(message);

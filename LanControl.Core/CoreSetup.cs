@@ -2,7 +2,7 @@
 using LanControl.Core.Adapters;
 using LanControl.Core.Adapters.Interfaces;
 using LanControl.Core.Database;
-using LanControl.Core.Errors;
+using LanControl.Shared.Exceptions;
 using LanControl.Core.Repositories.Interfaces;
 using LanControl.Core.Repositories;
 using LanControl.Core.Services;
@@ -29,7 +29,7 @@ public static class CoreSetup
         serviceCollection.AddScoped<IUserService, UserService>();
         serviceCollection.AddDbContext<DatabaseContext>(options =>
         {
-            if(config.DatabaseConnectionString is null) throw new DatabaseError("CONNECTION_STRING_NOT_PROVIDED");
+            if(config.DatabaseConnectionString is null) throw new DatabaseException("CONNECTION_STRING_NOT_PROVIDED");
             options.UseSqlite($"Data Source={config.DatabaseConnectionString}");
         });
         

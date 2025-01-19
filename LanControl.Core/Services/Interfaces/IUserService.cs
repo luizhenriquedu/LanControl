@@ -4,5 +4,5 @@ namespace LanControl.Core.Services.Interfaces;
 
 public interface IUserService
 {
-    public ValueTask CreateAdmin(CreateUserViewModel model);
+    public ValueTask<bool?> CreateAdmin(CreateUserViewModel model, string creatorName);
 }

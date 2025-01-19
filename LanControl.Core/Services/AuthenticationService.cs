@@ -11,8 +11,8 @@ public class AuthenticationService(IUserRepository userRepository, IDiscordWebho
     {
         var user = await userRepository.GetByEmail(model.Email);
         if (user is null || !user.IsValidPassword(model.Password)) return null;
-        
-        await logService.LogWebhook("LOGIN", user.Name, new DateTime().ToString());
+        var date = DateTime.Now;
+        await logService.LogWebhook("LOGIN", user.Name, date);
         return user.ToViewModel();
     }
 }

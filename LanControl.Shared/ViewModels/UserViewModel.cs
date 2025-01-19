@@ -1,3 +1,3 @@
 namespace LanControl.Shared.ViewModels;
 
-public record UserViewModel(string Name, int Id);
+public record UserViewModel(string Name, string Id);

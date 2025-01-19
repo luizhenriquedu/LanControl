@@ -7,10 +7,9 @@ namespace LanControl.Core.Services;
 
 public class DiscordWebhookLogService(IMessageQueueService messageQueueService) : IDiscordWebhookLogService
 {
-    public async Task LogWebhook(string action, string userName, string dateString)
+    public async Task LogWebhook(string action, string userName, DateTime date, string? created = null)
     {
-        var dateTime = DateTime.Parse(dateString, new CultureInfo("en-US"));
-        var log = new Log(userName, action, dateTime);
+        var log = new Log(userName, action, date, created);
 
         var webhook = log.ToDiscordWebhook();
 

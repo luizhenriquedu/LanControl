@@ -5,7 +5,7 @@ namespace LanControl.Core.Models;
 
 public class User
 {
-    public  int Id;
+    public required string Id;
     public required string Name { get; set; }
     public required string Email { get; set; }
     public required string PasswordHash { get; set; }
@@ -20,14 +20,17 @@ public class User
         return new UserViewModel(Name, Id);
     }
 
-    public static User CreateAdmin()
+    public static User CreateAdmin(string email, string password, string name)
     {
         var user = new User()
         {
-            Name = "Admin",
-            Email = "admin@admin.com",
-            PasswordHash = Argon2.Hash("admin")
+            Id = Guid.NewGuid().ToString(),
+            Name = name,
+            Email = email,
+            PasswordHash = Argon2.Hash(password),
         };
         return user;
     }
+    
+    
 }
