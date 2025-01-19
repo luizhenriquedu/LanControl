@@ -7,8 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.11" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="9.0.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.1" />
+    <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="2.1.175" />
     <PackageReference Include="TakasakiStudio.Lina" Version="2.3.0" />
     <PackageReference Include="TakasakiStudio.Lina.AspNet" Version="2.3.0" />
   </ItemGroup>
@@ -16,5 +17,8 @@
     <ProjectReference Include="../LanControl.Core/LanControl.Core.csproj" />
     <ProjectReference Include="../LanControl.Shared/LanControl.Shared.csproj" />
     <ProjectReference Include="../LanControl.Client/LanControl.Client.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\script.js" />
   </ItemGroup>
 </Project>

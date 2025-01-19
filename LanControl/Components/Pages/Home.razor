@@ -1,10 +1,52 @@
 ﻿@layout AppLayout
 
-<div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="https://files.catbox.moe/xdcyn5.png" alt="Card image cap">
-    <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+@inject IJSRuntime JsRuntime
+@rendermode InteractiveWebAssembly
+<main class="main">
+    <HomeNavBar/>
+    <h1> Conheça a <span class="contrast"> LanHouse </span></h1>
+    <h3>
+        <p class="fix"> <span class="fix">O melhor lugar para</span>
+            <span class="words-wrapper " style="font-size: 1.5em;">
+                <b style="font-size: 1em; font-weight: bolder ;" class="is-visible fix fix2">Programar</b>
+                <b style="font-size: 1em; font-weight: bolder ;" class="fix fix2">Conversar</b>
+                <b style="font-size: 1em; font-weight: bolder ;" class="fix fix2">Aprender</b>
+            </span>
+        </p>
+    </h3>
+    <h3>
+        <p>
+            Está interessado em começar a programar ou é experiente e quer bater um papo sobre programação? <br> Você achou o lugar certo, venha pra LanHouse e aproveite todas as nossas features exclusivas
+        </p>
+    </h3>
+    <section class="main-buttons">
+        <button class="btn btn-secondary"> <a class="no" href="https://discord.gg/v7c7xA9pjK" target="_blank"><i class="fa-brands fa-discord"></i> Entrar no Servidor</a></button>
+        <button class="btn btn-primary"> <a class="no" href="https://www.youtube.com/@@lan_code" target="_blank"><i class="fa-brands fa-youtube"></i> Youtube</a></button>
+    </section>
+
+    <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
     </div>
-</div>
+</main>
+
+<section class="features">
+    <div class="container">
+        <h1>Por que a LanHouse?</h1>
+
+        <div class="progress-bar-container">
+            <div class="progress-bar"></div>
+        </div>
+        <CardCarousel/>
+    </div>
+</section>
+<Footer></Footer>
+<script src="script.js"></script>

@@ -10,14 +10,28 @@ using TakasakiStudio.Lina.Database.Context;
 namespace LanControl.Core.Migrations
 {
     [DbContext(typeof(LinaDbContext))]
-    [Migration("20250119041334_Added lina functions")]
-    partial class Addedlinafunctions
+    [Migration("20250119183529_DEus vai")]
+    partial class DEusvai
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.1");
+
+            modelBuilder.Entity("LanControl.Core.Models.ServerPreferences", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("EnableWebhookLog")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ServerPreferences");
+                });
 
             modelBuilder.Entity("LanControl.Core.Models.User", b =>
                 {

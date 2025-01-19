@@ -5,7 +5,7 @@
 namespace LanControl.Core.Migrations
 {
     /// <inheritdoc />
-    public partial class Addedserverpreferences : Migration
+    public partial class DEusvai : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -22,6 +22,20 @@ namespace LanControl.Core.Migrations
                 {
                     table.PrimaryKey("PK_ServerPreferences", x => x.Id);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "User",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "TEXT", nullable: false),
+                    Name = table.Column<string>(type: "TEXT", maxLength: 150, nullable: false),
+                    Email = table.Column<string>(type: "TEXT", maxLength: 150, nullable: false),
+                    PasswordHash = table.Column<string>(type: "TEXT", maxLength: 150, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_User", x => x.Id);
+                });
         }
 
         /// <inheritdoc />
@@ -29,6 +43,9 @@ namespace LanControl.Core.Migrations
         {
             migrationBuilder.DropTable(
                 name: "ServerPreferences");
+
+            migrationBuilder.DropTable(
+                name: "User");
         }
     }
 }

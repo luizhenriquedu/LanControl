@@ -10,12 +10,16 @@
       <_ContentIncludedByDefault Remove="Components\Layout\MainLayout.razor" />
       <_ContentIncludedByDefault Remove="Components\Layout\NavMenu.razor" />
       <_ContentIncludedByDefault Remove="Components\Pages\Counter.razor" />
-      <_ContentIncludedByDefault Remove="Components\Pages\Error.razor" />
       <_ContentIncludedByDefault Remove="Components\Pages\Home.razor" />
-      <_ContentIncludedByDefault Remove="Components\Pages\Weather.razor" />
+      <_ContentIncludedByDefault Remove="wwwroot\css\app.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\css\coolbg.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\favicon.png" />
     </ItemGroup>
     <ItemGroup>
-        <ProjectReference Include="../LanControl.Shared/LanControl.Shared.csproj"/>
+        <ProjectReference Include="../LanControl.Shared/LanControl.Shared.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.8" />
     </ItemGroup>
 
 </Project>

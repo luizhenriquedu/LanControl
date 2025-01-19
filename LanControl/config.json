@@ -1,0 +1,4 @@
+{
+  "DatabaseConnectionString": "./Database/Database.db",
+  "DiscordWebhookLogUrl": "https://discord.com/api/webhooks/1320832786772394148/SPH_nPQ3Skn02YGvG8Pi2I-MFxQ7K30PGFovAA1ShaMdUp2y5AdD8GRHt5f1sS6qJvSI"
+}
