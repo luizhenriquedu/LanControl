@@ -23,9 +23,9 @@ public static class CoreSetup
         serviceCollection.AddAutoDependencyInjection<User>();
         serviceCollection.AddSingleton<IMessageQueueService, MessageQueueService>();
         serviceCollection.AddHostedService<SendDiscordWebhookWorker>();
-        serviceCollection.AddLinaDbContext<User>((builder, assembly) =>
+        serviceCollection.AddLinaDbContext<DesignDatabaseContext>((builder, assembly) =>
         {
-            builder.UseSqlite($"Data Source={config.DatabaseConnectionString}", optionsBuildeer =>
+            builder.UseSqlite(config.DatabaseConnectionString, optionsBuildeer =>
             {
                 optionsBuildeer.MigrationsAssembly(assembly);
             });

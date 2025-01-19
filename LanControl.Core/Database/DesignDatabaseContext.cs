@@ -13,11 +13,12 @@ public class DesignDatabaseContext : IDesignTimeDbContextFactory<LinaDbContext>
 {
     public LinaDbContext CreateDbContext(string[] args)
     
-    {  var serviceBuilder = new ServiceCollection();
-        var config = serviceBuilder.AddLoaderConfig<IConfig>();
+    {  
+        var serviceBuilder = new ServiceCollection(); 
+
         serviceBuilder.AddLinaDbContext<DesignDatabaseContext>((optionsBuilder, assembly) =>
         {
-            optionsBuilder.UseSqlite($"Data Source={config.DatabaseConnectionString}", options =>
+            optionsBuilder.UseSqlite($"Data Source=./Database/Database.db", options =>
             {
                 options.MigrationsAssembly(assembly);
             });
