@@ -4,9 +4,10 @@ using LanControl.Core.Adapters.Interfaces;
 using LanControl.Shared.Exceptions;
 using LanControl.Shared.ViewModels;
 using LanControl.Shared.ViewModels.Interfaces;
+using TakasakiStudio.Lina.AutoDependencyInjection.Attributes;
 
 namespace LanControl.Core.Adapters;
-
+[Adapter<ISendDiscordWebhookAdapter>]
 public class SendDiscordWebhookAdapter(HttpClient httpClient, IConfig config) : ISendDiscordWebhookAdapter
 {
     private readonly HttpClient _httpClient = httpClient; 

@@ -17,6 +17,7 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.1" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.1" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.1" />
+    <PackageReference Include="TakasakiStudio.Lina" Version="2.3.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="../LanControl.Shared/LanControl.Shared.csproj" />

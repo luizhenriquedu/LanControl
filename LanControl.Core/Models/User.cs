@@ -1,11 +1,13 @@
 using Isopoh.Cryptography.Argon2;
 using LanControl.Shared.ViewModels;
+using TakasakiStudio.Lina.Database.Interfaces;
+using TakasakiStudio.Lina.Database.Models;
 
 namespace LanControl.Core.Models;
 
-public class User
+public class User : BaseEntity<int>
 {
-    public required string Id;
+    public new required string Id;
     public required string Name { get; set; }
     public required string Email { get; set; }
     public required string PasswordHash { get; set; }
