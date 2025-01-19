@@ -1,0 +1,7 @@
+.vscode
+*bin
+*obj
+.env
+.idea
+LanControl.sln.DotSettings.user\
+*.db
