@@ -1,0 +1,12 @@
+@using LanControl.Client.Components
+@using LanControl.Shared.ViewModels
+@layout AppLayout
+
+<div class="d-flex h-100 align-items-center justify-content-center">
+    <LoginForm LoginError="LoginError" LoginData="LoginData"/>
+</div>
+
+@code {
+    [Parameter] public bool LoginError { get; set; }
+    [Parameter] public UserLoginViewModel LoginData { get; set; }
+}

@@ -15,6 +15,6 @@
   <ItemGroup>
     <ProjectReference Include="../LanControl.Core/LanControl.Core.csproj" />
     <ProjectReference Include="../LanControl.Shared/LanControl.Shared.csproj" />
-  
+    <ProjectReference Include="../LanControl.Client/LanControl.Client.csproj" />
   </ItemGroup>
 </Project>

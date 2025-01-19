@@ -5,7 +5,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
-
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
@@ -19,6 +18,8 @@ var app = builder.Build();
 app.UseHttpsRedirection();
 app.MapControllers();
 app.UseSession();
+app.UseAntiforgery();
+app.UseStaticFiles();
 app.MapRazorComponents<AppLayout>()
     .AddInteractiveServerRenderMode();
     
