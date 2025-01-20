@@ -6,7 +6,7 @@ using TakasakiStudio.Lina.Database.Repositories;
 
 namespace LanControl.Core.Repositories;
 [Repository<IServerPreferencesRepository>]
-public class ServerPreferencesRepository(DbContext dbContext) : BaseRepository<ServerPreferences, int>(dbContext), IServerPreferencesRepository
+public class PreferencesRepository(DbContext dbContext) : BaseRepository<ServerPreferences, int>(dbContext), IServerPreferencesRepository
 {
     
 }
