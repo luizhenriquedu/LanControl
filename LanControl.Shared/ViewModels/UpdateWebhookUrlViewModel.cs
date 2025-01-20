@@ -1,3 +1,3 @@
 namespace LanControl.Shared.ViewModels;
 
-public record UpdateWebhookUrlViewModel();
+public record UpdateWebhookUrlViewModel(string Url);

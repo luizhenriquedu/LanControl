@@ -6,18 +6,18 @@ namespace LanControl.Core.Services;
 
 public class MessageQueueService : IMessageQueueService
 {
-    private readonly Queue<DiscordWebhookViewModel> _queue = new Queue<DiscordWebhookViewModel>();
+    private readonly Queue<ToSendDiscordWebhookViewModel> _queue = new Queue<ToSendDiscordWebhookViewModel>();
 
-    public Task QueueMessageAsync(DiscordWebhookViewModel webhook)
+    public Task QueueMessageAsync(DiscordWebhookViewModel webhook, string url)
     {
-        _queue.Enqueue(webhook);
+        _queue.Enqueue(new ToSendDiscordWebhookViewModel(webhook, url));
         return Task.CompletedTask;
     }
 
-    public Task<DiscordWebhookViewModel?> DequeueMessageAsync()
+    public Task<ToSendDiscordWebhookViewModel?> DequeueMessageAsync()
     {
-        return _queue.Count != 0 ? Task.FromResult<DiscordWebhookViewModel?>(_queue.Dequeue()) : 
-            Task.FromResult<DiscordWebhookViewModel?>(null);
+        return _queue.Count != 0 ? Task.FromResult<ToSendDiscordWebhookViewModel?>(_queue.Dequeue()) : 
+            Task.FromResult<ToSendDiscordWebhookViewModel?>(null);
     }
     public bool HasPendingMessages() => _queue.Count != 0;
 }

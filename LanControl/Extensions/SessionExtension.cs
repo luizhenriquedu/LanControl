@@ -6,7 +6,7 @@ namespace LanControl.Extensions;
 public static class SessionExtension
 {
     private const string UserSessionName = "User";
-
+    
     public static async ValueTask SetUser(this ISession session, UserViewModel user)
     {
         await session.Set(UserSessionName, user);

@@ -8,8 +8,17 @@ using Microsoft.AspNetCore.Mvc;
 namespace LanControl.Controllers;
 [ApiController]
 [Route("/api/admin")]
+
 public class AdminController(IUserService userService, IAuthenticationService authenticationService) : ControllerBase
 {
+    
+    [HttpPost("generate-test-admin")]
+    public async Task<IActionResult> GenerateTest([FromBody] CreateUserViewModel model)
+    {
+        if (!ModelState.IsValid) return BadRequest();
+        await userService.CreateTestAdmin(model);
+        return Ok();
+    }
     [HttpPost("create")]
     [SessionAuthorize]
     public async Task<IActionResult> CreateAdmin([FromBody] CreateUserViewModel model)
@@ -18,7 +27,7 @@ public class AdminController(IUserService userService, IAuthenticationService au
         {
             if (!ModelState.IsValid) return BadRequest();
             var user = HttpContext.Session.GetUser();
-            await userService.CreateAdmin(model, user!.Name);
+            await userService.CreateAdmin(model, user!.Id);
             return CreatedAtAction(nameof(userService.CreateAdmin), model.Email);
         }
         catch (LoginException e)

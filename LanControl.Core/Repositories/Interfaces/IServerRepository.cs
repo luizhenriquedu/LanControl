@@ -1,6 +1,9 @@
+using LanControl.Core.Models;
+using TakasakiStudio.Lina.Database.Interfaces;
+
 namespace LanControl.Core.Repositories.Interfaces;
 
-public class IServerRepository
+public interface IServerRepository : IBaseRepository<Server, int>
 {
     
 }

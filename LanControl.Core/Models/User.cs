@@ -11,7 +11,8 @@ public class User : BaseEntity<int>
     public required string Name { get; set; }
     public required string Email { get; set; }
     public required string PasswordHash { get; set; }
-
+    public required int ServerId { get; set; }
+    public required Server Server { get; set; }
     public bool IsValidPassword(string password)
     {
         return Argon2.Verify(PasswordHash, password);
@@ -22,7 +23,7 @@ public class User : BaseEntity<int>
         return new UserViewModel(Name, Id);
     }
 
-    public static User CreateAdmin(string email, string password, string name)
+    public static User CreateAdmin(string email, string password, string name, Server server)
     {
         var user = new User()
         {
@@ -30,6 +31,8 @@ public class User : BaseEntity<int>
             Name = name,
             Email = email,
             PasswordHash = Argon2.Hash(password),
+            ServerId = server.Id,
+            Server = server,
         };
         return user;
     }

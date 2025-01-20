@@ -25,7 +25,7 @@ public static class CoreSetup
         serviceCollection.AddHostedService<SendDiscordWebhookWorker>();
         serviceCollection.AddLinaDbContext<DesignDatabaseContext>((builder, assembly) =>
         {
-            builder.UseSqlite(config.DatabaseConnectionString, optionsBuilder =>
+            builder.UseSqlite("Data Source=../LanControl.Core/Database/Database.db", optionsBuilder =>
             {
                 optionsBuilder.MigrationsAssembly(assembly);
             });

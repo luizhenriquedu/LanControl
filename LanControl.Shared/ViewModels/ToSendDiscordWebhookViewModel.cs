@@ -1,3 +1,3 @@
 namespace LanControl.Shared.ViewModels;
 
-public record ToSendDiscordWebhookViewModel();
+public record ToSendDiscordWebhookViewModel(DiscordWebhookViewModel Webhook, string Url);

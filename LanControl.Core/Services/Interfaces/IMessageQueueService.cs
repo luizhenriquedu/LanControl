@@ -4,8 +4,8 @@ namespace LanControl.Core.Services.Interfaces;
 
 public interface IMessageQueueService
 {
-    public Task QueueMessageAsync(DiscordWebhookViewModel webhook);
-    public Task<DiscordWebhookViewModel?> DequeueMessageAsync();
+    public Task QueueMessageAsync(DiscordWebhookViewModel webhook, string url);
+    public Task<ToSendDiscordWebhookViewModel?> DequeueMessageAsync();
 
     public bool HasPendingMessages();
 }
