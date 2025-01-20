@@ -1,5 +1,4 @@
 using LanControl.Components.Pages;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using TakasakiStudio.Lina.AspNet.Controllers;
 namespace LanControl.Controllers;

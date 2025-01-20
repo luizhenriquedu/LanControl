@@ -8,16 +8,16 @@ using TakasakiStudio.Lina.AutoDependencyInjection.Attributes;
 
 namespace LanControl.Core.Services;
 
-[Service<IPreferencesService>]
-public class PreferencesService(
+[Service<IPreferencesWebhookService>]
+public class PreferencesWebhookWebhookService(
     IPreferencesRepository preferencesRepository, 
     IDiscordWebhookLogService webhookLogService,
     IUserRepository userRepository,
     IServerRepository serverRepository
     ) 
-    : IPreferencesService
+    : IPreferencesWebhookService
 {
-    public async ValueTask UpdateEnabledWebhook(string userId)
+    public async ValueTask ToggleWebhook(string userId)
     {
         var user = await userRepository.Get(x => x.Id == userId);
         if (user is null) return;
@@ -26,11 +26,12 @@ public class PreferencesService(
         var preferences = await preferencesRepository.Get(x => x.ServerId == user.ServerId);
         if (preferences is null) return;
         preferences.EnableWebhookLog = !preferences.EnableWebhookLog;
-        preferencesRepository.Update(preferences);
-        await preferencesRepository.Commit();
         var enabledOrDisabled = preferences.EnableWebhookLog ? "ENABLED" : "DISABLED";
         await webhookLogService.LogWebhook($"{enabledOrDisabled} WEBHOOK LOG", 
             user.Name, DateTime.Now, user.Id, preferences);
+        preferencesRepository.Update(preferences);
+        await preferencesRepository.Commit();
+        
     }
     
     public async ValueTask UpdateWebhookUrl(string url, string userId, string userName)
@@ -53,8 +54,6 @@ public class PreferencesService(
                 DateTime.Now, user.Id, preferences);
             
         }
-
-        
     }
     
 }
