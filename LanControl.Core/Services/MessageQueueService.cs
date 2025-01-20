@@ -1,6 +1,5 @@
 using LanControl.Core.Services.Interfaces;
 using LanControl.Shared.ViewModels;
-using TakasakiStudio.Lina.AutoDependencyInjection.Attributes;
 
 namespace LanControl.Core.Services;
 

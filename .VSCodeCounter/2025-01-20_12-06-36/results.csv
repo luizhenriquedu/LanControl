@@ -1,0 +1,81 @@
+"filename", "language", "C#", "XML", "JSON", "ASP.NET Razor", "YAML", "CSS", "JavaScript", "comment", "blank", "total"
+"/home/luizh/projects/LanControl/.github/workflows/dotnet.yml", "YAML", 0, 0, 0, 0, 21, 0, 0, 2, 6, 29
+"/home/luizh/projects/LanControl/LanControl.Client/Components/CardCarousel.razor", "ASP.NET Razor", 0, 0, 0, 31, 0, 0, 0, 0, 4, 35
+"/home/luizh/projects/LanControl/LanControl.Client/Components/DiscordInvite.razor", "ASP.NET Razor", 0, 0, 0, 10, 0, 0, 0, 0, 2, 12
+"/home/luizh/projects/LanControl/LanControl.Client/Components/Footer.razor", "ASP.NET Razor", 0, 0, 0, 24, 0, 0, 0, 0, 3, 27
+"/home/luizh/projects/LanControl/LanControl.Client/Components/HomeNavBar.razor", "ASP.NET Razor", 0, 0, 0, 14, 0, 0, 0, 0, 1, 15
+"/home/luizh/projects/LanControl/LanControl.Client/Components/_Imports.razor", "ASP.NET Razor", 0, 0, 0, 10, 0, 0, 0, 0, 1, 11
+"/home/luizh/projects/LanControl/LanControl.Client/LanControl.Client.csproj", "XML", 0, 22, 0, 0, 0, 0, 0, 0, 4, 26
+"/home/luizh/projects/LanControl/LanControl.Client/Program.cs", "C#", 4, 0, 0, 0, 0, 0, 0, 0, 2, 6
+"/home/luizh/projects/LanControl/LanControl.Client/Properties/launchSettings.json", "JSON", 0, 0, 38, 0, 0, 0, 0, 0, 1, 39
+"/home/luizh/projects/LanControl/LanControl.Client/appsettings.Development.json", "JSON", 0, 0, 8, 0, 0, 0, 0, 0, 1, 9
+"/home/luizh/projects/LanControl/LanControl.Client/appsettings.json", "JSON", 0, 0, 9, 0, 0, 0, 0, 0, 1, 10
+"/home/luizh/projects/LanControl/LanControl.Core/Adapters/Interfaces/ISendDiscordWebhookAdapter.cs", "C#", 6, 0, 0, 0, 0, 0, 0, 0, 1, 7
+"/home/luizh/projects/LanControl/LanControl.Core/Adapters/SendDiscordWebhookAdapter.cs", "C#", 21, 0, 0, 0, 0, 0, 0, 0, 2, 23
+"/home/luizh/projects/LanControl/LanControl.Core/CoreSetup.cs", "C#", 33, 0, 0, 0, 0, 0, 0, 0, 6, 39
+"/home/luizh/projects/LanControl/LanControl.Core/Database/Configuration/PreferencesConfiguration.cs", "C#", 14, 0, 0, 0, 0, 0, 0, 0, 2, 16
+"/home/luizh/projects/LanControl/LanControl.Core/Database/Configuration/ServerConfiguration.cs", "C#", 14, 0, 0, 0, 0, 0, 0, 0, 2, 16
+"/home/luizh/projects/LanControl/LanControl.Core/Database/Configuration/UserConfiguration.cs", "C#", 14, 0, 0, 0, 0, 0, 0, 0, 2, 16
+"/home/luizh/projects/LanControl/LanControl.Core/Database/DesignDatabaseContext.cs", "C#", 25, 0, 0, 0, 0, 0, 0, 0, 5, 30
+"/home/luizh/projects/LanControl/LanControl.Core/LanControl.Core.csproj", "XML", 0, 23, 0, 0, 0, 0, 0, 0, 3, 26
+"/home/luizh/projects/LanControl/LanControl.Core/Migrations/20250120022527_remake migrations.Designer.cs", "C#", 90, 0, 0, 0, 0, 0, 0, 2, 27, 119
+"/home/luizh/projects/LanControl/LanControl.Core/Migrations/20250120022527_remake migrations.cs", "C#", 80, 0, 0, 0, 0, 0, 0, 3, 10, 93
+"/home/luizh/projects/LanControl/LanControl.Core/Migrations/LinaDbContextModelSnapshot.cs", "C#", 88, 0, 0, 0, 0, 0, 0, 1, 27, 116
+"/home/luizh/projects/LanControl/LanControl.Core/Models/Log.cs", "C#", 24, 0, 0, 0, 0, 0, 0, 0, 2, 26
+"/home/luizh/projects/LanControl/LanControl.Core/Models/Preferences.cs", "C#", 22, 0, 0, 0, 0, 0, 0, 0, 3, 25
+"/home/luizh/projects/LanControl/LanControl.Core/Models/Server.cs", "C#", 16, 0, 0, 0, 0, 0, 0, 0, 3, 19
+"/home/luizh/projects/LanControl/LanControl.Core/Models/User.cs", "C#", 35, 0, 0, 0, 0, 0, 0, 0, 6, 41
+"/home/luizh/projects/LanControl/LanControl.Core/Repositories/Interfaces/IPreferencesRepository.cs", "C#", 6, 0, 0, 0, 0, 0, 0, 0, 3, 9
+"/home/luizh/projects/LanControl/LanControl.Core/Repositories/Interfaces/IServerRepository.cs", "C#", 6, 0, 0, 0, 0, 0, 0, 0, 4, 10
+"/home/luizh/projects/LanControl/LanControl.Core/Repositories/Interfaces/IUserRepository.cs", "C#", 6, 0, 0, 0, 0, 0, 0, 0, 3, 9
+"/home/luizh/projects/LanControl/LanControl.Core/Repositories/PreferencesRepository.cs", "C#", 10, 0, 0, 0, 0, 0, 0, 0, 2, 12
+"/home/luizh/projects/LanControl/LanControl.Core/Repositories/ServerRepository.cs", "C#", 10, 0, 0, 0, 0, 0, 0, 0, 2, 12
+"/home/luizh/projects/LanControl/LanControl.Core/Repositories/UserRepository.cs", "C#", 9, 0, 0, 0, 0, 0, 0, 0, 1, 10
+"/home/luizh/projects/LanControl/LanControl.Core/Services/AuthenticationService.cs", "C#", 22, 0, 0, 0, 0, 0, 0, 0, 2, 24
+"/home/luizh/projects/LanControl/LanControl.Core/Services/DiscordWebhookLogService.cs", "C#", 39, 0, 0, 0, 0, 0, 0, 0, 9, 48
+"/home/luizh/projects/LanControl/LanControl.Core/Services/Interfaces/IAuthenticationService.cs", "C#", 6, 0, 0, 0, 0, 0, 0, 0, 2, 8
+"/home/luizh/projects/LanControl/LanControl.Core/Services/Interfaces/IDiscordWebhookLogService.cs", "C#", 12, 0, 0, 0, 0, 0, 0, 0, 2, 14
+"/home/luizh/projects/LanControl/LanControl.Core/Services/Interfaces/IMessageQueueService.cs", "C#", 8, 0, 0, 0, 0, 0, 0, 0, 3, 11
+"/home/luizh/projects/LanControl/LanControl.Core/Services/Interfaces/IPreferencesService.cs", "C#", 7, 0, 0, 0, 0, 0, 0, 0, 2, 9
+"/home/luizh/projects/LanControl/LanControl.Core/Services/Interfaces/IUserService.cs", "C#", 7, 0, 0, 0, 0, 0, 0, 0, 2, 9
+"/home/luizh/projects/LanControl/LanControl.Core/Services/MessageQueueService.cs", "C#", 19, 0, 0, 0, 0, 0, 0, 0, 4, 23
+"/home/luizh/projects/LanControl/LanControl.Core/Services/PreferencesService.cs", "C#", 52, 0, 0, 0, 0, 0, 0, 0, 7, 59
+"/home/luizh/projects/LanControl/LanControl.Core/Services/UserService.cs", "C#", 32, 0, 0, 0, 0, 0, 0, 0, 3, 35
+"/home/luizh/projects/LanControl/LanControl.Core/Workers/SendDiscordWebhookWorker.cs", "C#", 30, 0, 0, 0, 0, 0, 0, 0, 3, 33
+"/home/luizh/projects/LanControl/LanControl.Shared/Exceptions/DatabaseException.cs", "C#", 2, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"/home/luizh/projects/LanControl/LanControl.Shared/Exceptions/LoginException.cs", "C#", 2, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"/home/luizh/projects/LanControl/LanControl.Shared/Exceptions/SendDiscordWebhookException.cs", "C#", 2, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"/home/luizh/projects/LanControl/LanControl.Shared/Exceptions/UpdateWebhookException.cs", "C#", 2, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"/home/luizh/projects/LanControl/LanControl.Shared/LanControl.Shared.csproj", "XML", 0, 7, 0, 0, 0, 0, 0, 0, 3, 10
+"/home/luizh/projects/LanControl/LanControl.Shared/ViewModels/CreateUserViewModel.cs", "C#", 2, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"/home/luizh/projects/LanControl/LanControl.Shared/ViewModels/DiscordWebhookEmbedFieldViewModel.cs", "C#", 2, 0, 0, 0, 0, 0, 0, 0, 0, 2
+"/home/luizh/projects/LanControl/LanControl.Shared/ViewModels/DiscordWebhookEmbedViewModel.cs", "C#", 4, 0, 0, 0, 0, 0, 0, 0, 0, 4
+"/home/luizh/projects/LanControl/LanControl.Shared/ViewModels/DiscordWebhookViewModel.cs", "C#", 2, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"/home/luizh/projects/LanControl/LanControl.Shared/ViewModels/Interfaces/IConfig.cs", "C#", 5, 0, 0, 0, 0, 0, 0, 0, 2, 7
+"/home/luizh/projects/LanControl/LanControl.Shared/ViewModels/SendDiscordWebhookAdapterResponseViewModel.cs", "C#", 2, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"/home/luizh/projects/LanControl/LanControl.Shared/ViewModels/ToSendDiscordWebhookViewModel.cs", "C#", 2, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"/home/luizh/projects/LanControl/LanControl.Shared/ViewModels/UpdateWebhookUrlViewModel.cs", "C#", 2, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"/home/luizh/projects/LanControl/LanControl.Shared/ViewModels/UserLoginViewModel.cs", "C#", 2, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"/home/luizh/projects/LanControl/LanControl.Shared/ViewModels/UserViewModel.cs", "C#", 2, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"/home/luizh/projects/LanControl/LanControl/Attributes/SessionAuthorizeAttribute.cs", "C#", 14, 0, 0, 0, 0, 0, 0, 0, 1, 15
+"/home/luizh/projects/LanControl/LanControl/Components/Layout/AppLayout.razor", "ASP.NET Razor", 0, 0, 0, 16, 0, 0, 0, 0, 5, 21
+"/home/luizh/projects/LanControl/LanControl/Components/Layout/MainLayout.razor", "ASP.NET Razor", 0, 0, 0, 10, 0, 0, 0, 0, 2, 12
+"/home/luizh/projects/LanControl/LanControl/Components/Layout/MainLayout.razor.css", "CSS", 0, 0, 0, 0, 0, 13, 0, 0, 2, 15
+"/home/luizh/projects/LanControl/LanControl/Components/Pages/Home.razor", "ASP.NET Razor", 0, 0, 0, 48, 0, 0, 0, 0, 5, 53
+"/home/luizh/projects/LanControl/LanControl/Components/Pages/Login.razor", "ASP.NET Razor", 0, 0, 0, 10, 0, 0, 0, 0, 2, 12
+"/home/luizh/projects/LanControl/LanControl/Components/_Imports.razor", "ASP.NET Razor", 0, 0, 0, 12, 0, 0, 0, 0, 0, 12
+"/home/luizh/projects/LanControl/LanControl/Controllers/Admin/AdminController.cs", "C#", 53, 0, 0, 0, 0, 0, 0, 0, 5, 58
+"/home/luizh/projects/LanControl/LanControl/Controllers/Admin/PreferencesController.cs", "C#", 28, 0, 0, 0, 0, 0, 0, 0, 3, 31
+"/home/luizh/projects/LanControl/LanControl/Controllers/HomeController.cs", "C#", 15, 0, 0, 0, 0, 0, 0, 0, 0, 15
+"/home/luizh/projects/LanControl/LanControl/Controllers/LoginController.cs", "C#", 14, 0, 0, 0, 0, 0, 0, 0, 2, 16
+"/home/luizh/projects/LanControl/LanControl/Extensions/SessionExtension.cs", "C#", 26, 0, 0, 0, 0, 0, 0, 0, 5, 31
+"/home/luizh/projects/LanControl/LanControl/LanControl.csproj", "XML", 0, 22, 0, 0, 0, 0, 0, 0, 3, 25
+"/home/luizh/projects/LanControl/LanControl/Program.cs", "C#", 20, 0, 0, 0, 0, 0, 0, 2, 10, 32
+"/home/luizh/projects/LanControl/LanControl/Properties/launchSettings.json", "JSON", 0, 0, 41, 0, 0, 0, 0, 0, 1, 42
+"/home/luizh/projects/LanControl/LanControl/appsettings.Development.json", "JSON", 0, 0, 8, 0, 0, 0, 0, 0, 1, 9
+"/home/luizh/projects/LanControl/LanControl/appsettings.json", "JSON", 0, 0, 9, 0, 0, 0, 0, 0, 1, 10
+"/home/luizh/projects/LanControl/LanControl/config.json", "JSON", 0, 0, 3, 0, 0, 0, 0, 0, 0, 3
+"/home/luizh/projects/LanControl/LanControl/wwwroot/coolbg.css", "CSS", 0, 0, 0, 0, 0, 151, 0, 0, 27, 178
+"/home/luizh/projects/LanControl/LanControl/wwwroot/css/app.css", "CSS", 0, 0, 0, 0, 0, 632, 0, 2, 106, 740
+"/home/luizh/projects/LanControl/LanControl/wwwroot/js/script.js", "JavaScript", 0, 0, 0, 0, 0, 0, 129, 0, 36, 165
+"Total", "-", 970, 74, 116, 185, 21, 796, 129, 12, 414, 2717

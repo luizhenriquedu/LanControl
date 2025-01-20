@@ -1,6 +1,3 @@
 namespace LanControl.Shared.Exceptions;
 
-public class AuthenticationException
-{
-    
-}
+public class AdminAuthenticationException(string message) : Exception(message);

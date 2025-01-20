@@ -1,22 +1,14 @@
-using System.Diagnostics.CodeAnalysis;
 using LanControl.Shared.ViewModels;
 
 namespace LanControl.Core.Models;
 
-public class Log
+public class Log(string triggeredBy, string action, DateTimeOffset date, string? created)
 {
-    public required string TriggeredBy { get; init; }
-    public string? Created { get; init; }
-    public required string Action { get;  init; }
-    public required DateTime Date { get;  init; }
-    [SetsRequiredMembers]
-    public Log(string triggeredBy, string action, DateTime date, string? created)
-    {
-        TriggeredBy = triggeredBy;
-        Action = action;
-        Date = date;
-        Created = created;
-    }
+    private  string TriggeredBy { get; init; } = triggeredBy;
+    private string? Created { get; init; } = created;
+    private  string Action { get; init; } = action;
+    private  DateTimeOffset Date { get; init; } = date;
+
     public DiscordWebhookViewModel ToDiscordWebhook()
     {
         var field = new DiscordWebhookEmbedFieldViewModel(Action, $"Realizada por: {TriggeredBy}\nEm: {Date.ToString()}\n{(Created is null ? "":$"Created: {Created}")}");

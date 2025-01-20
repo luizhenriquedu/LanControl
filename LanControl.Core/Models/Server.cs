@@ -5,15 +5,21 @@ namespace LanControl.Core.Models;
 
 public class Server : BaseEntity<int>
 {
-    public  Preferences? Preferences { get; set; }
+    public required Preferences Preferences { get; set; }
     public ICollection<User> Admins { get; set; } = [];
-    
-    public static Server TestServer()
+
+    [SetsRequiredMembers]
+    private Server()
     {
-        ICollection<User> admins = [];
-        return new Server
+        var preferences = Preferences.CreatePreferences(this.Id, this);
+        Preferences = preferences;
+    }
+    public static Server CreateServer()
+    {
+        var server = new Server()
         {
-            Admins = admins
+            Admins = []
         };
+        return server;
     }
 }

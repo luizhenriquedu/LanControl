@@ -1,6 +1,3 @@
 namespace LanControl.Shared.ViewModels;
 
-public class CreateServerViewModel
-{
-    
-}
+public record CreateServerViewModel(string Email, string Password, string Name);
