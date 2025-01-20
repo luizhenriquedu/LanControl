@@ -11,7 +11,7 @@ namespace LanControl.Core.Migrations
 {
     [DbContext(typeof(LinaDbContext))]
     [Migration("20250120022527_remake migrations")]
-    partial class remakemigrations
+    partial class RemakeMigrations
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -11,7 +11,7 @@ public class ServerService(
     IUserRepository userRepository,
     IPreferencesRepository preferencesRepository) : IServerService
 {
-    public async ValueTask CreateServer(CreateServerViewModel model)
+    public async Task<UserViewModel> CreateServer(CreateServerViewModel model)
     {
         var server = Server.CreateServer();
         var preferences = server.Preferences;
@@ -26,5 +26,7 @@ public class ServerService(
         await serverRepository.Commit();
         await preferencesRepository.Commit();
         await userRepository.Commit();
+
+        return user.ToViewModel();
     }
 }

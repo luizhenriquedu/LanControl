@@ -40,16 +40,12 @@ public class PreferencesWebhookWebhookService(
     {
         var user = await userRepository.Get(x => x.Id == userId);
         
-        if(user is null) throw new AdminAuthenticationException("You are not authenticated");
-        
-        var server = user.Server;
-        var preferences = server.Preferences;
+        if(user is null) throw new UpdateWebhookException("You are not authenticated");
+
+        var preferences = await preferencesRepository.Get(x => x.ServerId == user.ServerId);
         
         if (preferences is null) 
-            throw new AdminAuthenticationException("You are not authenticated");
-        
-        if (!IsUrlValid(url)) 
-            throw new UpdateWebhookException("Invalid url provided");
+            throw new UpdateWebhookException("You are not authenticated");
         
         preferences.WebhookUrl = url;
         
@@ -59,10 +55,6 @@ public class PreferencesWebhookWebhookService(
         await webhookLogService.LogWebhook("UPDATE WEBHOOK URL", user, preferences);
         
     }
-    private static bool IsUrlValid(string url)
-    {
-        return Uri.TryCreate(url, UriKind.Absolute, out Uri? uriResult)
-               && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
-    }
+   
     
 }

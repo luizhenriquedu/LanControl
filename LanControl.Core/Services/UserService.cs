@@ -9,21 +9,22 @@ namespace LanControl.Core.Services;
 
 [Service<IUserService>]
 public class UserService(IUserRepository userRepository,
-    IDiscordWebhookLogService webhookLogService
+    IDiscordWebhookLogService webhookLogService,
+    IServerRepository serverRepository
     ) : IUserService
 {
     public async Task<UserViewModel?> CreateAdmin(CreateAdminToServerViewModel model, string creatorId)
     {
-        var creator = await userRepository.Get(x => x.Id == creatorId);
-        if (creator is null) throw new AdminAuthenticationException("You are not authenticated");
+        var creator = await userRepository.GetUserIncludingServer(creatorId);
+        if (creator is null) throw new LoginException("You are not authenticated");
         var server = creator.Server;
-        
+        if(server is null) throw new LoginException("You are not authenticated");
         if (await userRepository.Exists(x => x.Email == model.Email)) 
             throw new LoginException("This email is already in use");
-
-        if (server.Preferences is null) return null;
-        
+        serverRepository.Attach(server);
         var user = User.CreateAdmin(model.Email, model.Password, model.Name, server);
+        
+        server.Admins.Add(user);
         
         await userRepository.Add(user);
         await userRepository.Commit();

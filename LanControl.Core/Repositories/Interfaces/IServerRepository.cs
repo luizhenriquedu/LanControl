@@ -5,5 +5,5 @@ namespace LanControl.Core.Repositories.Interfaces;
 
 public interface IServerRepository : IBaseRepository<Server, int>
 {
-    
+    public void Attach(Server server);
 }

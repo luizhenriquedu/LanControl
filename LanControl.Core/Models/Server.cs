@@ -6,7 +6,7 @@ namespace LanControl.Core.Models;
 public class Server : BaseEntity<int>
 {
     public required Preferences Preferences { get; set; }
-    public ICollection<User> Admins { get; set; } = [];
+    public ICollection<User> Admins { get; set; } = new List<User>();
 
     [SetsRequiredMembers]
     private Server()

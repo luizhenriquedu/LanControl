@@ -5,7 +5,7 @@
 namespace LanControl.Core.Migrations
 {
     /// <inheritdoc />
-    public partial class remakemigrations : Migration
+    public partial class RemakeMigrations : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

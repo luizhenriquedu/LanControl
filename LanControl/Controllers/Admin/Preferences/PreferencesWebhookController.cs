@@ -21,7 +21,7 @@ public class PreferencesWebhookController(IPreferencesWebhookService preferences
             await preferencesWebhookService.ToggleWebhook(user!.Id);
             return Ok();
         }
-        catch (AdminAuthenticationException e){ return Unauthorized(e.Message);}
+        catch (UpdateWebhookException e){ return Unauthorized(e.Message);}
         
     }
     [HttpPatch("update-webhook-url")]
@@ -35,7 +35,7 @@ public class PreferencesWebhookController(IPreferencesWebhookService preferences
             await preferencesWebhookService.UpdateWebhookUrl(model.Url, user!.Id, user.Name);
             return Ok();
         }
-        catch (AdminAuthenticationException e)
+        catch (UpdateWebhookException e)
         {
             return Unauthorized(e.Message);
         }

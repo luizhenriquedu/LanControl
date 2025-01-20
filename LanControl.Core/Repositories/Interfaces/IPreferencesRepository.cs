@@ -5,5 +5,5 @@ namespace LanControl.Core.Repositories.Interfaces;
 
 public interface IPreferencesRepository : IBaseRepository<Preferences, int>
 {
-    
+    public void Attach(Preferences preferences);
 }

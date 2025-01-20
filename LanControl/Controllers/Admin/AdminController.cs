@@ -21,6 +21,7 @@ public class AdminController(IUserService userService ) : ControllerBase
             if (!ModelState.IsValid) return BadRequest();
             var user = HttpContext.Session.GetUser();
             var admin = await userService.CreateAdmin(model, user!.Id);
+            Console.WriteLine(admin);
             if (admin is null) return Unauthorized();
             return CreatedAtAction(nameof(userService.CreateAdmin), model.Email);
         }

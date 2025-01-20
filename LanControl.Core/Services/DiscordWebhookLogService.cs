@@ -1,7 +1,7 @@
 
-using System.Globalization;
 using LanControl.Core.Models;
 using LanControl.Core.Services.Interfaces;
+using LanControl.Shared.Exceptions;
 using LanControl.Shared.Extensions;
 using TakasakiStudio.Lina.AutoDependencyInjection.Attributes;
 
@@ -16,6 +16,8 @@ public class DiscordWebhookLogService(
         string? created = null)
     {
         if (!preferences.EnableWebhookLog) return;
+        if (!IsUrlValid(preferences.WebhookUrl))
+            return;
         var date = DateTimeOffset.UtcNow.ToBrasiliaDate();
         
         var log = new Log(user.Name, action, date, created);
@@ -23,5 +25,9 @@ public class DiscordWebhookLogService(
         await messageQueueService.QueueMessageAsync(webhook,preferences.WebhookUrl);
     }
     
-    
+    private static bool IsUrlValid(string url)
+    {
+        return Uri.TryCreate(url, UriKind.Absolute, out Uri? uriResult)
+               && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
+    }
 }

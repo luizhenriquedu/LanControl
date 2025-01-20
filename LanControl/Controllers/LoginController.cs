@@ -8,11 +8,11 @@ using TakasakiStudio.Lina.AspNet.Controllers;
 namespace LanControl.Controllers;
 
 [ApiController]
-[Route("login")]
+[Route("/api")]
 public class LoginController(IAuthenticationService authenticationService) : PageController
 {
     
-    [HttpPost]
+    [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] UserLoginViewModel model)
     {
         if (!ModelState.IsValid) return BadRequest();

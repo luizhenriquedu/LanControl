@@ -8,5 +8,8 @@ namespace LanControl.Core.Repositories;
 [Repository<IServerRepository>]
 public class ServerRepository(DbContext dbContext) : BaseRepository<Server, int>(dbContext), IServerRepository
 {
-    
+    public void Attach(Server server)
+    {
+        DbContext.Attach(server);
+    }
 }

@@ -1,5 +1,6 @@
 using LanControl.Core.Services;
 using LanControl.Core.Services.Interfaces;
+using LanControl.Extensions;
 using LanControl.Shared.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,7 +14,8 @@ public class ServerController(IServerService serverService) : ControllerBase
     public async Task<IActionResult> CreateServer(CreateServerViewModel model)
     {
         if (!ModelState.IsValid) return BadRequest();
-        await serverService.CreateServer(model);
+        var user = await serverService.CreateServer(model);
+        await HttpContext.Session.SetUser(user);
         return Ok();
     }
 }

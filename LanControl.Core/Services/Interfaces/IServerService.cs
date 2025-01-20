@@ -4,5 +4,5 @@ namespace LanControl.Core.Services.Interfaces;
 
 public interface IServerService
 {
-    public ValueTask CreateServer(CreateServerViewModel model);
+    public Task<UserViewModel> CreateServer(CreateServerViewModel model);
 }
