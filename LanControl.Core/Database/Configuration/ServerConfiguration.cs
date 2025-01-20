@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 namespace LanControl.Core.Database.Configuration;
 
-public class ServerPreferencesConfiguration : IEntityTypeConfiguration<ServerPreferences>
+public class ServerConfiguration : IEntityTypeConfiguration<Server>
 {
-    public void Configure(EntityTypeBuilder<ServerPreferences> entityBuilder)
+    public void Configure(EntityTypeBuilder<Server> entityBuilder)
     {
         entityBuilder.HasKey(x => x.Id);
         entityBuilder.Property(x => x.Id)
