@@ -6,9 +6,7 @@ public interface IDiscordWebhookLogService
 {
     public Task LogWebhook(
         string action,
-        string userName, 
-        DateTime date, 
-        string userId, 
-        Preferences? serverPreferences =null,
+        User userName, 
+        Preferences preferences,
         string? created = null);
 }

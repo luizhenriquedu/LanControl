@@ -1,4 +1,4 @@
-using LanControl.Core.Database;
+
 using LanControl.Core.Models;
 using LanControl.Core.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;

@@ -1,11 +1,8 @@
-using LanControl.Shared.ViewModels.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
-using Config.Net;
 using Microsoft.Extensions.DependencyInjection;
 using TakasakiStudio.Lina.Database;
 using TakasakiStudio.Lina.Database.Context;
-using TakasakiStudio.Lina.Utils.LoaderConfig;
 
 namespace LanControl.Core.Database;
 

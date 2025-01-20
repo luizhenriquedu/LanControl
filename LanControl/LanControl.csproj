@@ -21,4 +21,7 @@
   <ItemGroup>
     <None Include="wwwroot\script.js" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\Admin\Server\" />
+  </ItemGroup>
 </Project>

@@ -5,11 +5,11 @@ namespace LanControl.Core.Models;
 
 public class Preferences : BaseEntity<int>
 {
-    public required bool EnableWebhookLog { get; set; } = false;
+    public required bool EnableWebhookLog { get; set; }
     public required string WebhookUrl { get; set; } = String.Empty;
     [ForeignKey("ServerId")]
     public required int ServerId { get; init; }
-    public required Server Server { get; set; }
+    public required Server Server { get; init; }
 
     public static Preferences CreatePreferences(int serverId, Server server)
     {

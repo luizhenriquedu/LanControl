@@ -5,29 +5,23 @@ using LanControl.Shared.Exceptions;
 using LanControl.Shared.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
-namespace LanControl.Controllers;
+namespace LanControl.Controllers.Admin;
 [ApiController]
 [Route("/api/admin")]
-
-public class AdminController(IUserService userService, IAuthenticationService authenticationService) : ControllerBase
+[SessionAuthorize]
+public class AdminController(IUserService userService ) : ControllerBase
 {
     
-    [HttpPost("generate-test-admin")]
-    public async Task<IActionResult> GenerateTest([FromBody] CreateUserViewModel model)
-    {
-        if (!ModelState.IsValid) return BadRequest();
-        await userService.CreateTestAdmin(model);
-        return Ok();
-    }
     [HttpPost("create")]
-    [SessionAuthorize]
-    public async Task<IActionResult> CreateAdmin([FromBody] CreateUserViewModel model)
+    
+    public async Task<IActionResult> CreateAdmin([FromBody] CreateAdminToServerViewModel model)
     {
         try
         {
             if (!ModelState.IsValid) return BadRequest();
             var user = HttpContext.Session.GetUser();
-            await userService.CreateAdmin(model, user!.Id);
+            var admin = await userService.CreateAdmin(model, user!.Id);
+            if (admin is null) return Unauthorized();
             return CreatedAtAction(nameof(userService.CreateAdmin), model.Email);
         }
         catch (LoginException e)
@@ -36,23 +30,5 @@ public class AdminController(IUserService userService, IAuthenticationService au
         }
     }
     
-    [HttpPost]
-    public async Task<IActionResult> Login([FromBody] UserLoginViewModel model)
-    {
-        if (!ModelState.IsValid) return BadRequest();
-        var user = await authenticationService.LoginAsync(model);
-        if (user is null)
-        {
-            return Unauthorized();
-        }
-        await HttpContext.Session.SetUser(user);
-        return Ok();
-    }
-
-    [HttpGet("logout")]
-    public IActionResult Logout()
-    {
-        HttpContext.Session.Clear();
-        return Ok("/");
-    }
+    
 }

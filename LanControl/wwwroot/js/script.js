@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function animateBall(ball) {
-        const randomDuration = Math.random() * 1 + 5;
+        const randomDuration = Math.random() + 5;
         const randomDelay = Math.random() * 5;
 
         ball.style.animation = `moveBlur ${randomDuration}s infinite alternate ease-in-out ${randomDelay}s`;

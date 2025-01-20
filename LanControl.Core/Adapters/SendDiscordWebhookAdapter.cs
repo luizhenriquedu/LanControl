@@ -1,9 +1,7 @@
 using System.Net;
 using System.Net.Http.Json;
 using LanControl.Core.Adapters.Interfaces;
-using LanControl.Shared.Exceptions;
 using LanControl.Shared.ViewModels;
-using LanControl.Shared.ViewModels.Interfaces;
 using TakasakiStudio.Lina.AutoDependencyInjection.Attributes;
 
 namespace LanControl.Core.Adapters;
